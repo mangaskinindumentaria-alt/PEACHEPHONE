@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PEACHEPHONE: smartphones, ofertas y tecnología con estilo premium.">
+  <title>PEACHEPHONE | Tu próximo smartphone, aquí.</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="announcement">✨ OFERTAS SELECCIONADAS · Consultá disponibilidad por WhatsApp</div>
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="PEACHEPHONE inicio"><span class="brand-mark">P</span><span>PEACHE<span class="gold-text">PHONE</span><small>Tu próximo smartphone, aquí.</small></span></a>
+    <nav class="main-nav" aria-label="Navegación principal">
+      <a href="#inicio">Inicio</a><a href="#ofertas">Ofertas</a><a href="#productos">Celulares</a><a href="#categorias">Categorías</a>
+    </nav>
+    <div class="header-actions">
+      <input id="search" class="search-input" type="search" placeholder="Buscar celular..." aria-label="Buscar celulares">
+      <button class="text-button" id="login-open">♙ Ingresar</button>
+      <button class="cart-trigger" id="cart-open">🛒 Carrito <span id="cart-count" class="count">0</span></button>
+      <button class="icon-button menu-toggle" id="menu-toggle" aria-label="Abrir menú">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero page-width" id="inicio">
+      <div class="hero-copy">
+        <p class="eyebrow">TECNOLOGÍA · ESTILO · EXPERIENCIA</p>
+        <h1>Los mejores <span class="gold-text">smartphones.</span></h1>
+        <p>Encontrá el equipo que va con vos. Tecnología de última generación, ofertas especiales y atención personalizada.</p>
+        <div class="hero-buttons"><a class="button gold-button" href="#ofertas">Ver ofertas <span>↗</span></a><a class="button outline-button" href="#productos">Explorar catálogo</a></div>
+        <div class="hero-note"><span class="pulse-dot"></span> Nuevos modelos y oportunidades cada semana</div>
+      </div>
+      <div class="hero-art">
+        <div class="hero-glow"></div>
+        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1000&q=85" alt="Smartphone moderno" onerror="this.style.display='none'">
+        <div class="floating-label"><span>SELECCIÓN PREMIUM</span><strong>Tu próximo upgrade.</strong></div>
+      </div>
+    </section>
+
+    <section class="benefits page-width" aria-label="Beneficios">
+      <div><span class="benefit-icon">↗</span><p><strong>Envíos a coordinar</strong><small>Consultá cobertura y costos</small></p></div>
+      <div><span class="benefit-icon">◇</span><p><strong>Atención personalizada</strong><small>Te ayudamos a elegir</small></p></div>
+      <div><span class="benefit-icon">✓</span><p><strong>Compra transparente</strong><small>Confirmá stock y condiciones</small></p></div>
+    </section>
+
+    <section class="page-width section-block" id="ofertas">
+      <div class="section-title"><div><p class="eyebrow">OPORTUNIDADES DESTACADAS</p><h2>Ofertas <span class="gold-text">especiales</span></h2></div><span class="muted">Descuentos de muestra</span></div>
+      <div id="offers-grid" class="product-grid"></div>
+    </section>
+
+    <section class="page-width section-block" id="categorias">
+      <div class="section-title"><div><p class="eyebrow">EXPLORÁ A TU MANERA</p><h2>Elegí tu <span class="gold-text">categoría</span></h2></div></div>
+      <div class="category-row">
+        <button class="category-chip active" data-brand="todos">Todos</button>
+        <button class="category-chip" data-brand="Apple">Apple</button>
+        <button class="category-chip" data-brand="Samsung">Samsung</button>
+        <button class="category-chip" data-brand="Xiaomi">Xiaomi</button>
+        <button class="category-chip" data-brand="Motorola">Motorola</button>
+        <span class="category-divider"></span>
+        <button class="category-chip" data-range="premium">Gama premium</button>
+        <button class="category-chip" data-range="media">Gama media</button>
+        <button class="category-chip" data-range="entrada">Gama de entrada</button>
+      </div>
+    </section>
+
+    <section class="page-width section-block" id="productos">
+      <div class="section-title"><div><p class="eyebrow">CATÁLOGO PEACHEPHONE</p><h2>Todos los <span class="gold-text">productos</span></h2></div>
+        <label class="sort-label">Ordenar por <select id="sort"><option value="featured">Destacados</option><option value="low">Menor precio</option><option value="high">Mayor precio</option><option value="discount">Mayor descuento</option></select></label>
+      </div>
+      <div id="product-grid" class="product-grid"></div>
+      <p id="empty-state" class="empty-state" hidden>No encontramos productos con esos filtros.</p>
+    </section>
+
+    <section class="admin-entry page-width">
+      <div><p class="eyebrow">HERRAMIENTAS DE LA TIENDA</p><h2>¿Administrás PEACHEPHONE?</h2><p>Gestioná el catálogo de demostración desde este navegador.</p></div>
+      <button id="admin-open" class="button outline-button">Abrir panel de administración ↗</button>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="brand" href="#inicio"><span class="brand-mark">P</span><span>PEACHE<span class="gold-text">PHONE</span><small>Tu próximo smartphone, aquí.</small></span></a>
+    <p>© <span id="year"></span> PEACHEPHONE. Precios e imágenes ilustrativos.</p>
+    <a href="#inicio">Volver arriba ↑</a>
+  </footer>
+
+  <div class="scrim" id="scrim"></div>
+  <aside class="side-panel" id="cart-panel" aria-label="Carrito de compras" aria-hidden="true">
+    <div class="panel-heading"><div><p class="eyebrow">TU SELECCIÓN</p><h2>Mi carrito <span id="cart-heading-count">(0)</span></h2></div><button class="icon-button" data-close="cart" aria-label="Cerrar carrito">✕</button></div>
+    <div id="cart-items" class="cart-items"></div>
+    <div class="cart-bottom"><div class="total-row"><span>Total estimado</span><strong id="cart-total">$0</strong></div><p class="fine-print">El stock, precio final, envío y forma de pago deben confirmarse con la tienda.</p><button id="whatsapp-checkout" class="button gold-button full-width">Consultar pedido por WhatsApp ↗</button></div>
+  </aside>
+
+  <section class="modal" id="login-modal" role="dialog" aria-modal="true" aria-labelledby="login-title" hidden>
+    <div class="modal-card"><button class="icon-button modal-close" data-close="login" aria-label="Cerrar">✕</button>
+      <p class="eyebrow">ÁREA DE CLIENTES</p><h2 id="login-title">Ingresá a tu cuenta</h2><p class="muted">Demo local: no ingreses contraseñas reales.</p>
+      <form id="login-form"><label>Correo electrónico<input id="login-email" type="email" placeholder="tu@email.com" required></label><label>Contraseña<input id="login-password" type="password" minlength="4" placeholder="Mínimo 4 caracteres" required></label><button class="button gold-button full-width" type="submit">Iniciar sesión de demostración</button></form>
+      <p id="login-message" class="form-message" role="status"></p><p class="fine-print">Esta versión solo simula el inicio de sesión en tu navegador. Para cuentas reales necesitás autenticación segura en un backend.</p>
+    </div>
+  </section>
+
+  <section class="modal" id="admin-modal" role="dialog" aria-modal="true" aria-labelledby="admin-title" hidden>
+    <div class="modal-card admin-card"><button class="icon-button modal-close" data-close="admin" aria-label="Cerrar">✕</button>
+      <p class="eyebrow">GESTIÓN LOCAL</p><h2 id="admin-title">Panel de administración</h2><p class="muted">Los cambios quedan guardados en este navegador, no en una base de datos compartida.</p>
+      <form id="product-form" class="admin-form">
+        <label>Nombre del celular<input id="new-name" required maxlength="70" placeholder="Ej. Galaxy S25"></label>
+        <div class="form-two"><label>Marca<select id="new-brand"><option>Apple</option><option>Samsung</option><option>Xiaomi</option><option>Motorola</option><option>Otra</option></select></label><label>Gama<select id="new-range"><option value="premium">Premium</option><option value="media">Media</option><option value="entrada">Entrada</option></select></label></div>
+        <div class="form-two"><label>Precio (ARS)<input id="new-price" type="number" min="1" required placeholder="500000"></label><label>Descuento (%)<input id="new-discount" type="number" min="0" max="80" value="0"></label></div>
+        <label>URL de imagen (opcional)<input id="new-image" type="url" placeholder="https://..."></label>
+        <label>Descripción<input id="new-description" maxlength="120" placeholder="Memoria, cámara, características"></label>
+        <button class="button gold-button full-width" type="submit">Agregar producto</button>
+      </form>
+      <div class="admin-list-heading"><h3>Productos del catálogo</h3><button id="reset-products" class="small-link" type="button">Restaurar demo</button></div>
+      <div id="admin-products" class="admin-products"></div>
+      <p class="fine-print">No existe protección de administrador en esta maqueta. No la publiques con datos reales hasta implementar login seguro en servidor.</p>
+    </div>
+  </section>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
