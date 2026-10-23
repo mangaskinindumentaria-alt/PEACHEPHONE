@@ -126,3 +126,40 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{ou
 @media(max-width:1050px){.site-header{flex-wrap:wrap}.main-nav{order:3;width:100%;justify-content:center}.header-actions{margin-left:auto}.product-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.benefits>div{padding:18px 14px}}
 @media(max-width:720px){.site-header{gap:12px;padding:12px 5%}.main-nav{display:none;flex-wrap:wrap;gap:16px}.main-nav.show{display:flex}.menu-toggle{display:inline-block}.search-input{width:140px}.header-actions{gap:9px}.text-button{display:none}.hero{grid-template-columns:1fr;padding-top:48px;padding-bottom:35px}.hero-art{min-height:250px}.hero-art img{height:250px}.floating-label{right:5px;bottom:5px}.benefits{grid-template-columns:1fr;margin-bottom:55px}.benefits>div+div{border-left:0;border-top:1px solid var(--line)}.product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.product-visual{height:165px}.product-info{padding:12px}.price{font-size:1.05rem}.section-title{align-items:flex-start;flex-direction:column}.admin-entry{align-items:flex-start;flex-direction:column;padding:23px}.footer{flex-direction:column;text-align:center}.sort-label{width:100%;justify-content:space-between}}
 @media(max-width:430px){.brand{font-size:.94rem}.brand-mark{width:33px;height:33px}.search-input{order:4;width:100%}.header-actions{display:flex;flex-wrap:wrap;justify-content:flex-end}.header-actions .search-input{flex-basis:100%}.hero h1{font-size:2.7rem}.product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.product-visual{height:140px}.product-info h3{font-size:.87rem}.product-desc{font-size:.68rem}.price-row{gap:5px}.category-chip{padding:8px 10px;font-size:.73rem}.form-two{grid-template-columns:1fr}.modal-card{padding:25px 20px}}
+
+.whatsapp-float {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 9999;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  background-color: #25D366;
+  border-radius: 50%;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  text-decoration: none;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.whatsapp-float:hover {
+  background-color: #1ebe5d;
+  transform: scale(1.08);
+}
+
+.whatsapp-float:focus-visible {
+  outline: 3px solid #128C7E;
+  outline-offset: 4px;
+}
+
+@media (max-width: 600px) {
+  .whatsapp-float {
+    right: 16px;
+    bottom: 16px;
+    width: 56px;
+    height: 56px;
+  }
+}
