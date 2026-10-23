@@ -319,6 +319,22 @@ $("#whatsapp-checkout").addEventListener("click", () => {
   window.open(url, "_blank", "noopener,noreferrer");
 });
 
+ // Acceso oculto al panel de administración:
+ // presioná Alt + Shift + P
+document.addEventListener("keydown", event => {
+  if (
+    event.altKey &&
+    event.shiftKey &&
+    event.key.toLowerCase() === "p" &&
+    !event.repeat
+  ) {
+    event.preventDefault();
+    renderAdminProducts();
+    openModal("admin-modal");
+  }
+});
+
+
 $("#year").textContent = new Date().getFullYear();
 renderProducts();
 renderCart();
