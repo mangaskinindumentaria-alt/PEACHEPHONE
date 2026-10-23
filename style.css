@@ -193,3 +193,8 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{ou
     height: 44px;
   }
 }
+
+/* Ocultar el acceso público al panel administrativo */
+.admin-entry {
+  display: none !important;
+}
